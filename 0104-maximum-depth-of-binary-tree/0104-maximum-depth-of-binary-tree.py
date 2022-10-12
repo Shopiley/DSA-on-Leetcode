@@ -9,5 +9,7 @@ class Solution:
         if root == None:
             return 0
         
-        return max(self.maxDepth(root.left), self.maxDepth(root.right)) + 1
+        sum = max(self.maxDepth(root.left), self.maxDepth(root.right))
+        
+        return sum + 1
         
