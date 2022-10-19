@@ -10,8 +10,7 @@ class Solution:
                 left = right  # we always want left to be the minimum (use [2,1,2,1,0,1,2])
                 right += 1
             else:
-                if profit > max_profit:
-                    max_profit = profit
+                max_profit = max(max_profit, profit)
                 right += 1
                 
         return max_profit
