@@ -14,10 +14,9 @@ class Solution:
                 
         return max_profit
             
-             
-            
-         
-        
+                   
+   # check here for explanation:      
+   #     https://leetcode.com/problems/best-time-to-buy-and-sell-stock/discuss/1735550/Python- Javascript-Easy-solution-with-very-clear-Explanation     
         
         
         
