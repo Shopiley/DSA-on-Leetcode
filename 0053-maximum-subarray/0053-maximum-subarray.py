@@ -37,39 +37,40 @@ class Solution:
 # ------------------------------------------------------------------------- 
         # kadane's algorithm
         # bottle neck: doesn't work when the array has negative numbers only
-#         max_so_far = float("-inf")
-#         max_ending_here = 0
+        max_so_far = float("-inf")
+        max_ending_here = 0
         
-#         if len(nums) <= 1:
-#             return nums[0]
-        
-#         for i in range(len(nums)):
-#             max_ending_here += nums[i]
+        for i in range(len(nums)):
+            
 
-#             if max_ending_here < 0:
-#                 max_ending_here = 0     # hoping that we'll still find a positive no along the way
+            if max_ending_here < 0:
+                max_ending_here = 0     # hoping that we'll still find a positive no along the way
+            max_ending_here += nums[i]
+            max_so_far = max(max_so_far, max_ending_here)
 
-#             max_so_far = max(max_so_far, max_ending_here)
-
-#         return max_so_far
+        return max_so_far
 # ---------------------------------------------------------------------------
 
 # from neetcode
 
-        max_so_far = nums[0]
-        max_ending_here = 0
+#         max_so_far = nums[0]
+#         max_ending_here = 0
         
-        for i in range(len(nums)):
-            if max_ending_here < 0:
-                max_ending_here = 0
+#         for i in range(len(nums)):
+#             if max_ending_here < 0:
+#                 max_ending_here = 0
             
-            max_ending_here += nums[i]
+#             max_ending_here += nums[i]
             
-            max_so_far = max(max_so_far, max_ending_here)
+#             max_so_far = max(max_so_far, max_ending_here)
             
-        return max_so_far
+#         return max_so_far
 
+# in a case where all the numbers in the array are positive, max_ending_here will just keep adding all the numbers together such that max_so_far will be the total sum of the array - which makes sense
 
+# whereas, if all the numbers are negative, max_ending_here would have the values of the neg number on each iteration and dince we'd be comparing to max_so_far each time, max_so_far at the end of the day will be the single largest negative integer
+
+# you're welcome future me!
 
 
 
