@@ -41,17 +41,18 @@ class Solution:
         max_ending_here = 0
         
         for i in range(len(nums)):
-            
+            max_ending_here += nums[i]
+            max_so_far = max(max_so_far, max_ending_here)
 
             if max_ending_here < 0:
                 max_ending_here = 0     # hoping that we'll still find a positive no along the way
-            max_ending_here += nums[i]
-            max_so_far = max(max_so_far, max_ending_here)
+
+            
 
         return max_so_far
 # ---------------------------------------------------------------------------
 
-# from neetcode
+# from neetcode: kadane's but the if block is moved up
 
 #         max_so_far = nums[0]
 #         max_ending_here = 0
