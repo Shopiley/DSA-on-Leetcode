@@ -5,20 +5,21 @@ class Solution:
         #check the value r for which target - values in our hash map (false cause hashmap is empty the first time): return index of r in hash map
         #store values:index in the hash map 
         
+        #correct
         # for i in range(len(nums)):
         #     r = target - nums[i]
         #     if r in nums:
         #         if nums.index(r) != i:
         #             return (i, nums.index(r))
         
-        
+        #correct
         for i in range(len(nums)):
             r = target - nums[i]
             if r in nums and nums.index(r) != i:
                 return [i, nums.index(r)]
         
         
-        
+        # correct but inefficient
         # for i in range(0, len(nums)-1):
         #     for j in range(i+1, len(nums)):
         #         # if j <= i:
