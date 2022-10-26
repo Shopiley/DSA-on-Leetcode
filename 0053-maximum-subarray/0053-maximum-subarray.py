@@ -47,8 +47,6 @@ class Solution:
             if max_ending_here < 0:
                 max_ending_here = 0     # hoping that we'll still find a positive no along the way
 
-            
-
         return max_so_far
 # ---------------------------------------------------------------------------
 
@@ -57,6 +55,7 @@ class Solution:
 #         max_so_far = nums[0]
 #         max_ending_here = 0
         
+    
 #         for i in range(len(nums)):
 #             if max_ending_here < 0:
 #                 max_ending_here = 0
