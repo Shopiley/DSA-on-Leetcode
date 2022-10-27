@@ -18,9 +18,7 @@ class Solution:
             return True
         else:
             return False
-
-
-        
+ 
         
         
 # chudi's solution        
