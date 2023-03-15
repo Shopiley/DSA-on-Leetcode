@@ -20,6 +20,7 @@ class Solution:
         stack = [4, 7]
 
         """
+        
         if not head:
             return None
         
@@ -31,10 +32,12 @@ class Solution:
             
             if temp.next: stack.append(temp.next)
             if temp.child: stack.append(temp.child)
+                
             curr.next = temp
             temp.prev = curr
             temp.child = None
             curr = temp   # moving current to temp
+            
         dummy.next.prev = None  # making the first node .prev point to None instead of Node(0)
         return dummy.next
                 
