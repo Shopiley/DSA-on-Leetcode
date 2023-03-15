@@ -21,7 +21,8 @@ class Solution:
 
         """
         if not head:
-            return head
+            return None
+        
         dummy = Node(0)
         curr, stack = dummy, [head]
         
