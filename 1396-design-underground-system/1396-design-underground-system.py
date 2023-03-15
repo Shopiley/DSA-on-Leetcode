@@ -12,6 +12,7 @@ class UndergroundSystem:
 
     def checkOut(self, id: int, stationName: str, t: int) -> None:
         arrivalEvent = self.arrivals[id]
+        del self.arrivals[id]
         
         time_diff = t - arrivalEvent[2]
         
