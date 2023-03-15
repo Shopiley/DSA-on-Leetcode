@@ -3,7 +3,7 @@ class UndergroundSystem:
     def __init__(self):
         self.delimiter = ","
         self.arrivals = {}
-        self.averages = defaultdict(lambda: (0.0, 0)) # => A,B: totalhrs, pCount
+        self.averages = {} # => A,B: totalhrs, pCount
                 
 
     def checkIn(self, id: int, stationName: str, t: int) -> None:
@@ -17,13 +17,13 @@ class UndergroundSystem:
         
         key = arrivalEvent[1] + self.delimiter + stationName
         
-        # if key not in self.averages:
-        #     self.averages[key] = (time_diff, 1)
-        # else:
-        totalhrs, pCount = self.averages[key]
-        totalhrs += time_diff
-        pCount += 1  
-        self.averages[key] = (totalhrs, pCount)
+        if key not in self.averages:
+            self.averages[key] = (time_diff, 1)
+        else:
+            totalhrs, pCount = self.averages[key]
+            totalhrs += time_diff
+            pCount += 1  
+            self.averages[key] = (totalhrs, pCount)
        
 
     def getAverageTime(self, startStation: str, endStation: str) -> float:
