@@ -2,21 +2,21 @@ class UndergroundSystem:
 
     def __init__(self):
         self.delimiter = ","
-        self.arrivals = {}
+        self.arrivals = {} # => id: stationName, t
         self.averages = {} # => A,B: totalhrs, pCount
                 
 
     def checkIn(self, id: int, stationName: str, t: int) -> None:
-        self.arrivals[id] = (id, stationName, t)
+        self.arrivals[id] = (stationName, t)
         
 
     def checkOut(self, id: int, stationName: str, t: int) -> None:
         arrivalEvent = self.arrivals[id]
         del self.arrivals[id]
         
-        time_diff = t - arrivalEvent[2]
+        time_diff = t - arrivalEvent[1]
         
-        key = arrivalEvent[1] + self.delimiter + stationName
+        key = arrivalEvent[0] + self.delimiter + stationName
         
         if key not in self.averages:
             self.averages[key] = (time_diff, 1)
