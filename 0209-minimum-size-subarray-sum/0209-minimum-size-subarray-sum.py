@@ -11,10 +11,9 @@ class Solution:
             while currentSum >= target:
                 length = min(length, right-left+1)
                 currentSum -= nums[left]
-                left += 1
-            
+                left += 1               
             right += 1
-
+                
         return 0 if length==inf else length
         
 
