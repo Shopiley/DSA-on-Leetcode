@@ -13,4 +13,4 @@ class Solution:
                 nums[pointer] = nums[i]
                 pointer += 1
 
-        return len(nums[0:pointer])
+        return pointer
