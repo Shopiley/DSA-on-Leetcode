@@ -2,14 +2,16 @@
 impl Solution {
     pub fn length_of_longest_substring(s: String) -> i32 {
         use std::collections::HashSet;
+        //add to a hash set
+        // if element is in hash set, get max_length then delete hash set from the beginning till that element
         
         let mut char_set: HashSet<char> = HashSet::new();
         let mut ptr = 0usize;
         let mut char_ptr = 0usize;
-        let mut max_length = 0;
-        let chars: Vec<char> = s.chars().collect(); // Convert the string to characters
+        let mut max_length = 0usize;
+        let chars: Vec<char> = s.chars().collect();
         
-        while ptr < chars.len() {
+        while ptr < s.len() {     
             while char_set.contains(&chars[ptr]) {
                 max_length = max_length.max(char_set.len());
                 char_set.remove(&chars[char_ptr]);
@@ -18,6 +20,6 @@ impl Solution {
             char_set.insert(chars[ptr]);
             ptr += 1;
         }
-        max_length.max(char_set.len()) as i32 // Compare the max_length and the current length one more time
+        max_length.max(char_set.len()) as i32
     }
 }
