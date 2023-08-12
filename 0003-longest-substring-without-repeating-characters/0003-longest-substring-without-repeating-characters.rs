@@ -1,9 +1,12 @@
 
 impl Solution {
     pub fn length_of_longest_substring(s: String) -> i32 {
-        use std::collections::HashSet;
+        
         //add to a hash set
-        // if element is in hash set, get max_length then delete hash set from the beginning till that element
+        // if element is in hash set:
+                //get max_length then delete hash set from the beginning till that element
+        
+        use std::collections::HashSet;
         
         let mut char_set: HashSet<char> = HashSet::new();
         let mut ptr = 0usize;
@@ -23,3 +26,8 @@ impl Solution {
         max_length.max(char_set.len()) as i32
     }
 }
+
+/*
+    time: O(n*k)
+    space: O(n)
+*/
