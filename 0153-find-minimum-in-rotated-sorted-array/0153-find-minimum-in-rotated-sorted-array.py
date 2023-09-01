@@ -13,4 +13,9 @@ class Solution:
                 high = mid
                 
         return nums[low]
+    
+    """
+    time: O(log n)
+    space: O(1)
+    """
    
