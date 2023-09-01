@@ -4,9 +4,6 @@ class Solution:
         high = len(nums) - 1
         mid = (low + high)//2
         
-        # if len(nums) == 1:
-        #     return nums[0]
-        
         if nums[mid] >= nums[low]:
             while mid < len(nums) and nums[mid] >= nums[low]:
                 mid += 1
@@ -18,4 +15,4 @@ class Solution:
             while nums[mid] < nums[low]:
                 mid -= 1
             return nums[mid+1]
-        
+   
