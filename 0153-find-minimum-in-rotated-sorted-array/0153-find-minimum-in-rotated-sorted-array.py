@@ -8,9 +8,8 @@ class Solution:
                 mid += 1
             return nums[mid]
         
-        elif nums[mid] < end:
-            while nums[mid] < end:
-                mid -= 1
-            return nums[mid+1]
+        while nums[mid] < end:
+            mid -= 1
+        return nums[mid+1]
                 
    
