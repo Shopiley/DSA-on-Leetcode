@@ -3,16 +3,13 @@ class Solution:
         
         alice = 0
         bob = 0
-        left = 0 
         
-        for right in range(3, len(colors)+1):
-            window = colors[left:right]
-            
-            if window == "AAA":
-                alice += 1
-            elif window == "BBB":
-                bob += 1
-            left += 1
+        for i in range(1, len(colors)-1):
+            if colors[i-1] == colors[i] == colors[i+1]:
+                if colors[i] == "A":
+                    alice += 1
+                else:
+                    bob += 1
         
         return alice - bob >= 1
         
