@@ -12,6 +12,11 @@ class Solution:
                     bob += 1
         
         return alice - bob >= 1
+    
+"""
+time complexity: O(n) where n = length of colors
+space complexity: O(1)
+"""
         
         
         
