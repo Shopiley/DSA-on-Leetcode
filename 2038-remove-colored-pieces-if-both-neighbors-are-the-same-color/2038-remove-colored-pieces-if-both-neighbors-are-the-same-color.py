@@ -14,7 +14,6 @@ class Solution:
                 bob += 1
             left += 1
         
-        print(alice, bob)
         return alice - bob >= 1
         
         
